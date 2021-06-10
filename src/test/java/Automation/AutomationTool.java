@@ -8,15 +8,17 @@ import org.testng.annotations.BeforeClass;
 public class AutomationTool {
 
     public WebDriver driver;
+
     @BeforeClass
     public void setup () {
+
         System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
+
     @AfterClass
-    public void teardown () throws InterruptedException {
-        Thread.sleep(1000);
+    public void teardown (){
         driver.quit();
     }
 }
